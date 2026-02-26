@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+requests
+beautifulsoup4
+lxml
+nltk
+scikit-learn
+numpy
+pandas
+sentence-transformers
+faiss-cpu
+python-multipart
+jinja2
+feedparser
