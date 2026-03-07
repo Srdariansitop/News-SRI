@@ -13,7 +13,7 @@ def main():
     bm25 = BM25(builder.index)
 
     query = input("Ingrese su consulta: ")
-    results = bm25.search(query, top_k=5)
+    results = bm25.search(query)
 
     if not results:
         print("No se encontraron resultados.")
