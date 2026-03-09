@@ -70,3 +70,7 @@ Thumbs.db
 # Project specific
 *.log
 .env.local
+
+# --- Project Specific (Models & Data) ---
+# Ignorar modelos de lenguaje (pesados y binarios)
+modelos/

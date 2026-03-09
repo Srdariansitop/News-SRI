@@ -1,8 +1,108 @@
 import sys
-
+import os
+import json
 from app.crawler.rss_crawler import crawl
 from app.indexing.index_builder import IndexBuilder
 from app.retrieval.bm25 import BM25
+from app.vector.embeddings import EmbeddingGenerator
+from app.vector.vector_store import VectorStore
+
+RAW_DATA_PATH = "data/raw"
+
+
+def load_raw_documents():
+
+    documents = []
+
+    for filename in os.listdir(RAW_DATA_PATH):
+
+        if not filename.endswith(".json"):
+            continue
+
+        path = os.path.join(RAW_DATA_PATH, filename)
+
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        documents.append(data)
+
+    return documents
+
+def run_embeddings():
+
+    print("\n🧠 Generando embeddings desde documentos RAW...\n")
+
+    documents = load_raw_documents()
+
+    if not documents:
+        print("❌ No hay documentos en data/raw. Ejecuta primero el crawling.")
+        return
+
+    embedder = EmbeddingGenerator()
+
+    dimension = embedder.get_dimension()
+
+    vector_store = VectorStore(dimension)
+
+    texts = []
+    ids = []
+
+    for doc in documents:
+
+        doc_id = doc["id"]
+
+        text = f"{doc.get('title','')} {doc.get('content','')}"
+
+        texts.append(text)
+
+        ids.append(doc_id)
+
+    print(f"📄 Generando embeddings para {len(texts)} documentos...")
+
+    vectors = embedder.encode_batch(texts)
+
+    vector_store.add(vectors, ids)
+
+    vector_store.save("data/vector_db")
+
+    print("\n✅ Embeddings generados y guardados.")
+
+
+
+def run_semantic_search():
+
+    print("\n🔎 Búsqueda semántica...\n")
+
+    documents = load_raw_documents()
+
+    doc_map = {doc["id"]: doc for doc in documents}
+
+    embedder = EmbeddingGenerator()
+
+    vector_store = VectorStore(embedder.get_dimension())
+
+    vector_store.load("data/vector_db")
+
+    query = input("📝 Ingrese su consulta: ")
+
+    query_vector = embedder.encode(query)
+
+    results = vector_store.search(query_vector, top_k=10)
+
+    print("\n🏆 Resultados:\n")
+
+    for i, (doc_id, score) in enumerate(results, 1):
+
+        doc = doc_map.get(doc_id)
+
+        if not doc:
+            continue
+
+        print(f"{i}. {doc.get('title','Sin título')}")
+        print(f"   Score: {score:.4f}")
+        print(f"   Fuente: {doc.get('source','N/A')}")
+        print(f"   URL: {doc.get('url','N/A')}")
+        print()
 
 
 def run_crawling():
@@ -70,9 +170,12 @@ def main():
         print("="*45)
         print("Seleccione una opción:")
         print("  1 - Crawling")
-        print("  2 - Crawling and Indexing")
-        print("  3 - Buscar término")
-        print("  4 - Salir")
+        print("  2 - Crawling + Indexing")
+        print("  3 - Generar Embeddings")
+        print("  4 - Buscar (BM25)")
+        print("  5 - Buscar (Semantic Search)")
+        print("  6 - Crawling + Indexing + Embeddings")
+        print("  7 - Salir")
         print("="*45)
 
         opcion = input("\n👉 Elija una opción (1-4): ")
@@ -85,9 +188,20 @@ def main():
             run_indexing()
             
         elif opcion == "3":
-            run_search()
-            
+         run_embeddings()
+
         elif opcion == "4":
+         run_search()
+
+        elif opcion == "5": 
+         run_semantic_search()
+
+        elif opcion == "6":
+          run_crawling()
+          run_indexing()
+          run_embeddings()
+          
+        elif opcion == "7":
             print("\n👋 Saliendo del programa. ¡Hasta luego!\n")
             sys.exit(0)
             
