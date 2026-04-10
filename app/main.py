@@ -6,6 +6,7 @@ from app.indexing.index_builder import IndexBuilder
 from app.retrieval.bm25 import BM25
 from app.vector.embeddings import EmbeddingGenerator
 from app.vector.vector_store import VectorStore
+from app.maintenance.cleaner import DataCleaner 
 
 RAW_DATA_PATH = "data/raw"
 
@@ -163,11 +164,39 @@ def run_search():
         print()
 
 
+
+def run_cleanup_duplicates():
+    print("\n🧹 Eliminando duplicados...\n")
+
+    cleaner = DataCleaner()
+
+    cleaner.remove_duplicate_crawler()
+    cleaner.remove_duplicate_embeddings()
+
+    print("\n✅ Limpieza de duplicados completada.\n")
+
+
+def run_delete_all_data():
+    print("\n⚠️ ADVERTENCIA: Esto eliminará TODOS los datos\n")
+    confirm = input("Escriba 'SI' para confirmar: ")
+
+    if confirm != "SI":
+        print("❌ Operación cancelada.")
+        return
+
+    cleaner = DataCleaner()
+
+    cleaner.delete_crawler_data()
+    cleaner.delete_embeddings()
+
+    print("\n🗑️ Base de datos completamente eliminada.\n")
+
+
 def main():
     while True:
-        print("\n" + "="*45)
+        print("\n" + "="*50)
         print("    📰 MOTOR DE BÚSQUEDA Y CRAWLER (BBC)")
-        print("="*45)
+        print("="*50)
         print("Seleccione una opción:")
         print("  1 - Crawling")
         print("  2 - Crawling + Indexing")
@@ -175,39 +204,47 @@ def main():
         print("  4 - Buscar (BM25)")
         print("  5 - Buscar (Semantic Search)")
         print("  6 - Crawling + Indexing + Embeddings")
-        print("  7 - Salir")
-        print("="*45)
+        print("  7 - Limpiar duplicados")
+        print("  8 - Borrar TODA la base de datos")
+        print("  9 - Salir")
+        print("="*50)
 
-        opcion = input("\n👉 Elija una opción (1-4): ")
+        opcion = input("\n👉 Elija una opción: ")
 
         if opcion == "1":
             run_crawling()
-            
+
         elif opcion == "2":
             run_crawling()
             run_indexing()
-            
+
         elif opcion == "3":
-         run_embeddings()
+            run_embeddings()
 
         elif opcion == "4":
-         run_search()
+            run_search()
 
-        elif opcion == "5": 
-         run_semantic_search()
+        elif opcion == "5":
+            run_semantic_search()
 
         elif opcion == "6":
-          run_crawling()
-          run_indexing()
-          run_embeddings()
-          
+            run_crawling()
+            run_indexing()
+            run_embeddings()
+
         elif opcion == "7":
+            run_cleanup_duplicates()
+
+        elif opcion == "8":
+            run_delete_all_data()
+
+        elif opcion == "9":
             print("\n👋 Saliendo del programa. ¡Hasta luego!\n")
             sys.exit(0)
-            
+
         else:
-            print("\n❌ Opción no reconocida. Por favor, introduzca un número del 1 al 4.")
-
-
+            print("\n❌ Opción no reconocida.")
+            print("Por favor, ingrese un número del 1 al 9.")
+            
 if __name__ == "__main__":
     main()
