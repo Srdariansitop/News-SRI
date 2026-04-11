@@ -92,7 +92,10 @@ def run_semantic_search():
 
     print("\n🏆 Resultados:\n")
 
-    for i, (doc_id, score) in enumerate(results, 1):
+    for i, result in enumerate(results, 1):
+
+        doc_id = result["metadata"] 
+        score = result["score"]     
 
         doc = doc_map.get(doc_id)
 
@@ -104,7 +107,6 @@ def run_semantic_search():
         print(f"   Fuente: {doc.get('source','N/A')}")
         print(f"   URL: {doc.get('url','N/A')}")
         print()
-
 
 def run_crawling():
     print("\n🚀 Iniciando crawling...\n")
@@ -177,7 +179,7 @@ def run_cleanup_duplicates():
 
 
 def run_delete_all_data():
-    print("\n⚠️ ADVERTENCIA: Esto eliminará TODOS los datos\n")
+    print("\n⚠️ ADVERTENCIA: Esto eliminará TODOS los datos (documentos y embeddings)\n")
     confirm = input("Escriba 'SI' para confirmar: ")
 
     if confirm != "SI":
@@ -190,6 +192,36 @@ def run_delete_all_data():
     cleaner.delete_embeddings()
 
     print("\n🗑️ Base de datos completamente eliminada.\n")
+
+
+def run_delete_documents():
+    print("\n⚠️ ADVERTENCIA: Esto eliminará SOLO los documentos (datos del crawler)\n")
+    confirm = input("Escriba 'SI' para confirmar: ")
+
+    if confirm != "SI":
+        print("❌ Operación cancelada.")
+        return
+
+    cleaner = DataCleaner()
+
+    cleaner.delete_crawler_data()
+
+    print("\n🗑️ Documentos eliminados.\n")
+
+
+def run_delete_embeddings():
+    print("\n⚠️ ADVERTENCIA: Esto eliminará SOLO los embeddings\n")
+    confirm = input("Escriba 'SI' para confirmar: ")
+
+    if confirm != "SI":
+        print("❌ Operación cancelada.")
+        return
+
+    cleaner = DataCleaner()
+
+    cleaner.delete_embeddings()
+
+    print("\n🗑️ Embeddings eliminados.\n")
 
 
 def main():
@@ -206,7 +238,9 @@ def main():
         print("  6 - Crawling + Indexing + Embeddings")
         print("  7 - Limpiar duplicados")
         print("  8 - Borrar TODA la base de datos")
-        print("  9 - Salir")
+        print("  9 - Borrar SOLO documentos")
+        print(" 10 - Borrar SOLO embeddings")
+        print(" 11 - Salir")
         print("="*50)
 
         opcion = input("\n👉 Elija una opción: ")
@@ -239,12 +273,18 @@ def main():
             run_delete_all_data()
 
         elif opcion == "9":
+            run_delete_documents()
+
+        elif opcion == "10":
+            run_delete_embeddings()
+
+        elif opcion == "11":
             print("\n👋 Saliendo del programa. ¡Hasta luego!\n")
             sys.exit(0)
 
         else:
             print("\n❌ Opción no reconocida.")
-            print("Por favor, ingrese un número del 1 al 9.")
+            print("Por favor, ingrese un número del 1 al 11.")
             
 if __name__ == "__main__":
     main()
