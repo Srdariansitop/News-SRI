@@ -18,7 +18,8 @@ class IndexBuilder:
         self.data_path = data_path
         self.index_path = index_path
         self.preprocessor = Preprocessor()
-        self.index = InvertedIndex()
+        self.index_title = InvertedIndex()
+        self.index_content = InvertedIndex()
         self.documents_metadata: Dict[str, dict] = {}
 
     def load_document(self, filepath: str) -> Optional[dict]:
@@ -59,10 +60,14 @@ class IndexBuilder:
         if not doc_id:
             return
 
-        text = self.extract_indexable_text(doc)
-        term_positions = self.preprocessor.get_term_positions(text)
+        title_text = doc.get("title", "")
+        content_text = doc.get("content", "")
 
-        self.index.add_document(doc_id, term_positions)
+        title_positions = self.preprocessor.get_term_positions(title_text)
+        content_positions = self.preprocessor.get_term_positions(content_text)
+
+        self.index_title.add_document(doc_id, title_positions)
+        self.index_content.add_document(doc_id, content_positions)
         self.documents_metadata[doc_id] = self.extract_metadata(doc)
 
     def build(self) -> int:
@@ -80,17 +85,25 @@ class IndexBuilder:
     def save(self):
         Path(self.index_path).mkdir(parents=True, exist_ok=True)
 
-        index_filepath = os.path.join(self.index_path, INDEX_FILE)
-        self.index.save(index_filepath)
+        title_filepath = os.path.join(self.index_path, "title_" + INDEX_FILE)
+        content_filepath = os.path.join(self.index_path, "content_" + INDEX_FILE)
+        
+        self.index_title.save(title_filepath)
+        self.index_content.save(content_filepath)
 
         metadata_filepath = os.path.join(self.index_path, METADATA_FILE)
         with open(metadata_filepath, "w", encoding="utf-8") as f:
             json.dump(self.documents_metadata, f, ensure_ascii=False, indent=2)
 
     def load(self):
-        index_filepath = os.path.join(self.index_path, INDEX_FILE)
-        if os.path.exists(index_filepath):
-            self.index.load(index_filepath)
+        title_filepath = os.path.join(self.index_path, "title_" + INDEX_FILE)
+        content_filepath = os.path.join(self.index_path, "content_" + INDEX_FILE)
+
+        if os.path.exists(title_filepath):
+            self.index_title.load(title_filepath)
+            
+        if os.path.exists(content_filepath):
+            self.index_content.load(content_filepath)
 
         metadata_filepath = os.path.join(self.index_path, METADATA_FILE)
         if os.path.exists(metadata_filepath):
@@ -102,9 +115,10 @@ class IndexBuilder:
 
     def get_stats(self) -> dict:
         return {
-            "total_documents": self.index.doc_count,
-            "vocabulary_size": self.index.get_vocabulary_size(),
-            "avg_doc_length": self.index.get_average_doc_length(),
+            "total_documents": self.index_content.doc_count,
+            "vocabulary_size": len(set(self.index_title.get_vocabulary()) | set(self.index_content.get_vocabulary())),
+            "avg_title_length": self.index_title.get_average_doc_length(),
+            "avg_content_length": self.index_content.get_average_doc_length(),
         }
 
 

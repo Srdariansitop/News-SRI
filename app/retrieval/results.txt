@@ -1,0 +1,1116 @@
+BEFORE
+
+Documentos indexados: 98
+Vocabulario: 4868 términos
+Longitud promedio: 387.86
+
+Ingrese su consulta: science
+
+Top 3 resultados:
+
+1. [3.5519] Urgent research needed to tackle AI threats, says Google AI boss
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c0q3g0ln274o?at_medium=RSS&at_campaign=rss
+
+2. [3.4832] Why scientists fear Emperor penguins' annual moult may be killing them
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c204626888zo?at_medium=RSS&at_campaign=rss
+
+3. [3.4832] Why scientists fear Emperor penguins' annual moult may be killing them
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c204626888zo?at_medium=RSS&at_campaign=rss
+
+
+Documentos indexados: 98
+Vocabulario: 4868 términos
+Longitud promedio: 387.86
+
+Ingrese su consulta: sports
+
+Top 1 resultados:
+
+1. [3.7930] 'I make between £800 and £2,000 a month on zero-hours contracts. There's no consistency'
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c20lz7rkqv4o?at_medium=RSS&at_campaign=rss
+
+
+Documentos indexados: 98
+Vocabulario: 4868 términos
+Longitud promedio: 387.86
+
+Ingrese su consulta: medicine
+
+Top 1 resultados:
+
+1. [5.4876] Mafia boss behind notorious murders in Italy dies behind bars in Milan
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c1kglr2dvk9o?at_medium=RSS&at_campaign=rss
+
+
+Documentos indexados: 98
+Vocabulario: 4868 términos
+Longitud promedio: 387.86
+
+Ingrese su consulta: politics
+
+Top 10 resultados:
+
+1. [3.6784] Trump belittles Starmer with 'no Churchill' jibe but can the special relationship recover?
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c4gqqdy847jo?at_medium=RSS&at_campaign=rss
+
+2. [3.5544] Why fake AI videos of UK urban decline are taking over social media
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c4g8r23yv71o?at_medium=RSS&at_campaign=rss
+
+3. [2.6649] Farage calls for changes to election voting rules
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cj0dnry9ljgo?at_medium=RSS&at_campaign=rss
+
+4. [2.5558] Refugee status becomes temporary in asylum shake-up
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cp32ddzdjxko?at_medium=RSS&at_campaign=rss
+
+5. [2.4923] Belgium detains three suspected Cameroon separatists in war crimes probe
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c77ek5gpl7lo?at_medium=RSS&at_campaign=rss
+
+6. [2.3834] Why Europe's leaders have struggled to speak as one on Iran
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cn8z5zvlz5yo?at_medium=RSS&at_campaign=rss
+
+7. [2.2896] Waitrose to suspend mackerel sales due to overfishing concerns
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cgl5gee07xzo?at_medium=RSS&at_campaign=rss
+
+8. [2.2896] MPs' pay to rise by 5% to £98,599 a year from April
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cvgvrpvveyqo?at_medium=RSS&at_campaign=rss
+
+9. [2.1987] Trump says US Navy will protect ships in Middle East 'if necessary'
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c20zg54g5vvo?at_medium=RSS&at_campaign=rss
+
+10. [1.8747] Go further on regulating leasehold managing agents, Rayner urges
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c75ex9e0yzxo?at_medium=RSS&at_campaign=rss
+
+
+
+TESTING PARAMS
+
+
+==================================================
+Evaluando consulta: 'AI threats research Google'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 13.3058] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 8.6018] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.1158] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 5.8924] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.2869] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.5110] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  7. [Score: 4.4316] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  8. [Score: 4.3004] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  9. [Score: 4.1736] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+  10. [Score: 4.0517] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 13.3335] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 8.6836] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.1757] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 5.8679] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.2776] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.4821] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  7. [Score: 4.4100] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  8. [Score: 4.3192] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  9. [Score: 4.1939] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+  10. [Score: 4.0665] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 13.3892] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 8.8537] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.2996] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 5.8195] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.2591] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.4255] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  7. [Score: 4.3677] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  8. [Score: 4.3573] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  9. [Score: 4.2352] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+  10. [Score: 4.0964] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 14.1084] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 9.0191] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.3409] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 5.9877] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.6116] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.6657] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  7. [Score: 4.6066] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  8. [Score: 4.4003] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+  9. [Score: 4.3955] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  10. [Score: 4.3386] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 14.1409] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 9.1114] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.4090] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 5.9607] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.6007] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.6412] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  7. [Score: 4.5743] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  8. [Score: 4.4190] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+  9. [Score: 4.4165] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  10. [Score: 4.3622] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 14.2064] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 9.3039] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.5502] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 5.9074] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.5789] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.5933] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  7. [Score: 4.5112] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  8. [Score: 4.4589] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  9. [Score: 4.4569] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+  10. [Score: 4.4101] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 14.6074] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 9.2821] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.4767] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 6.0430] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.8136] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.8132] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  7. [Score: 4.6615] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  8. [Score: 4.6212] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+  9. [Score: 4.4512] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  10. [Score: 4.4361] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 14.6430] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 9.3808] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.5499] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 6.0146] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.8016] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.7869] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  7. [Score: 4.6426] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+  8. [Score: 4.6272] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  9. [Score: 4.4734] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  10. [Score: 4.4616] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 14.7148] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 9.5871] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  3. [Score: 6.7016] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  4. [Score: 5.9585] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  5. [Score: 5.7777] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 4.7354] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  7. [Score: 4.6861] First writing may be 40,000 years earlier than thought (ID: 5bd33ed9...)
+  8. [Score: 4.5602] Instagram to alert parents if teens search for self-harm and suicide content (ID: f0669ca0...)
+  9. [Score: 4.5185] Asia stocks tumble for third day, oil rises as markets track Iran war (ID: a3841a50...)
+  10. [Score: 4.5136] 'I was on Instagram all day' - woman tells landmark trial (ID: 56436cd6...)
+
+==================================================
+Evaluando consulta: 'climate change effects environment'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 8.9895] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.2743] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.2743] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.8102] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.1689] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.1689] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.5429] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.2999] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.2999] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 4.0976] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 8.9947] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.2927] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.2927] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.7120] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.0988] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.0988] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.5652] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.2422] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.2422] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 4.0109] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 9.0051] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.3298] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.3298] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.5239] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 5.9634] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 5.9634] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.6104] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.1305] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.1305] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 3.8483] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 9.5452] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.3791] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.3791] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.8648] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.2672] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.2672] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.7308] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.3106] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.3106] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 4.0994] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 9.5514] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.3992] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.3992] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.7584] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.1902] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.1902] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.7560] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.2488] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.2488] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 4.0072] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 9.5640] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.4397] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.4397] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.5552] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.0421] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.0421] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.8072] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.1295] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.1295] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 3.8349] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 9.8861] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.4415] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.4415] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.8966] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.3250] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.3250] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.8440] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.3176] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.3176] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 4.1018] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 9.8930] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.4625] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.4625] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.7855] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.2441] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.2441] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.8709] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.2535] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.2535] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 4.0065] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 9.9070] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  2. [Score: 7.5051] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  3. [Score: 7.5051] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  4. [Score: 6.5736] How are flooding and storms affecting wildlife? (ID: abe797c5...)
+  5. [Score: 6.0885] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  6. [Score: 6.0885] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  7. [Score: 5.9257] Wild spaces for butterflies to be created in Glasgow (ID: d57b489a...)
+  8. [Score: 5.1299] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: adec66af...)
+  9. [Score: 5.1299] Earth's heat to power 10,000 homes in renewable energy first for UK (ID: 058494d6...)
+  10. [Score: 3.8287] Why Europe's leaders have struggled to speak as one on Iran (ID: c32cb7b5...)
+
+==================================================
+Evaluando consulta: 'vote voting votes election'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 22.7426] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 21.3530] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 16.4249] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.4700] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 10.6618] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.4707] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.4707] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.4707] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 4.5587] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.6373] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 22.7296] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 21.4581] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 16.5628] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.3878] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 10.6712] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.4187] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.4187] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.4187] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 4.5504] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.6583] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 22.7037] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 21.6725] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 16.8464] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.2269] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 10.6902] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.3173] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.3173] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.3173] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 4.5338] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.7011] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 25.1579] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 23.3783] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 17.3408] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.6451] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 11.0139] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.4151] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.4151] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.4151] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 4.8887] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.7865] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 25.1410] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 23.5118] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 17.5039] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.5546] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 11.0247] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.3604] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.3604] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.3604] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 4.8784] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.8110] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 25.1072] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 23.7847] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 17.8404] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.3779] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 11.0465] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.2537] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.2537] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.2537] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 4.8580] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.8608] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 26.7359] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 24.6822] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 17.9005] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.7461] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 11.2198] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.3846] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.3846] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.3846] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 5.0935] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.8749] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 26.7161] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 24.8355] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 18.0798] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.6508] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 11.2314] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.3284] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.3284] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.3284] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 5.0819] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.9014] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 26.6766] Farage calls for changes to election voting rules (ID: e65cef7a...)
+  2. [Score: 25.1493] Weekend voting to be piloted in May elections (ID: 29cb959e...)
+  3. [Score: 18.4504] Burnham would probably have won by-election, Labour deputy leader says (ID: 546e393a...)
+  4. [Score: 11.4648] Refugee status becomes temporary in asylum shake-up (ID: 959d7f88...)
+  5. [Score: 11.2548] Targets and watchdog for nature as Senedd passes new law (ID: 7e3839cb...)
+  6. [Score: 6.2190] UK launches consultation asking for views on under-16s social media ban (ID: 6c594173...)
+  7. [Score: 6.2190] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  8. [Score: 6.2190] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+  9. [Score: 5.0590] Labour promises to replace Wales' largest hospital if it wins Senedd election (ID: de400256...)
+  10. [Score: 3.9557] No new tax rises in Spring Statement, but don't be fooled - tax bills are still rising (ID: e6ee3996...)
+
+==================================================
+Evaluando consulta: 'rare penguin moult behavior'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 15.8198] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 15.8198] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 4.9494] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.1567] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 3.9732] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 15.8302] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 15.8302] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.1133] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.2253] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.0239] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 15.8512] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 15.8512] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.4760] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.3696] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.1291] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 17.2467] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 17.2467] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.1254] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.2303] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.0275] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 17.2599] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 17.2599] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.3144] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.3066] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.0834] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 17.2865] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 17.2865] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.7376] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.4677] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.1997] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 18.1582] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 18.1582] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.2288] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.2724] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.0584] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 18.1734] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 18.1734] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.4332] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.3531] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.1172] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 18.2038] Why scientists fear Emperor penguins' annual moult may be killing them (ID: a1d01a99...)
+  2. [Score: 18.2038] Why scientists fear Emperor penguins' annual moult may be killing them (ID: da09d6b4...)
+  3. [Score: 5.8941] Young trees planted to expand temperate rainforest (ID: 0d9b4e42...)
+  4. [Score: 4.5241] How photographer captured six planets in 'parade' (ID: 08434610...)
+  5. [Score: 4.2400] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+
+==================================================
+Evaluando consulta: 'what are the risks of artificial intelligence in modern society'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 7.7366] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.4303] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.0525] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 4.8068] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.7867] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.0412] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.7572] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.7572] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.6695] Reeves says her plan is working as growth forecast cut for this year (ID: e0df21a1...)
+  10. [Score: 3.6695] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 7.7594] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.4108] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.0498] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 4.8747] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.7622] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.0623] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.7070] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.7070] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.6507] Reeves says her plan is working as growth forecast cut for this year (ID: e0df21a1...)
+  10. [Score: 3.6507] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 7.8053] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.3724] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.0444] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 5.0163] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.7139] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.1053] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.6137] Reeves says her plan is working as growth forecast cut for this year (ID: e0df21a1...)
+  8. [Score: 3.6137] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+  9. [Score: 3.6107] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  10. [Score: 3.6107] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 8.0181] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.5741] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.2917] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 4.8796] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.7605] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.1773] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.7547] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.7547] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.6502] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  10. [Score: 3.6502] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 8.0443] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.5525] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.2886] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 4.9546] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.7345] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.2012] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.7013] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.7013] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.6295] Reeves says her plan is working as growth forecast cut for this year (ID: e0df21a1...)
+  10. [Score: 3.6295] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 8.0972] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.5098] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.2823] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 5.1117] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.6834] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.2497] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.5990] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.5990] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.5903] Reeves says her plan is working as growth forecast cut for this year (ID: e0df21a1...)
+  10. [Score: 3.5903] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 8.1835] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.6591] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.4335] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 4.9210] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.7460] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.2593] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.7540] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.7540] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.6603] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  10. [Score: 3.6603] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 8.2118] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.6363] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.4301] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 5.0001] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.7192] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.2848] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.6988] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.6988] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.6313] UK launches consultation asking for views on under-16s social media ban (ID: 04e87718...)
+  10. [Score: 3.6313] UK launches consultation asking for views on under-16s social media ban (ID: ac37e261...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 8.2690] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.5911] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  3. [Score: 6.4233] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  4. [Score: 5.1664] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 4.6666] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  6. [Score: 4.3368] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  7. [Score: 3.5931] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 3152c393...)
+  8. [Score: 3.5931] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  9. [Score: 3.5855] New fungal research to support woodland creation (ID: 8549afc8...)
+  10. [Score: 3.5774] Reeves says her plan is working as growth forecast cut for this year (ID: e0df21a1...)
+
+==================================================
+Evaluando consulta: 'AI AI AI technology future'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 14.6525] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 12.5136] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  3. [Score: 12.4326] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  4. [Score: 12.2175] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  5. [Score: 12.1914] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  6. [Score: 12.1914] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 12.1914] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  8. [Score: 12.0623] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  9. [Score: 10.9553] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 10.4774] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 14.6709] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 12.6108] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  3. [Score: 12.3802] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  4. [Score: 12.2523] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  5. [Score: 12.1858] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  6. [Score: 12.1858] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 12.1858] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  8. [Score: 12.1138] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  9. [Score: 10.9401] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 10.4760] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 14.7080] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 12.8101] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  3. [Score: 12.3226] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  4. [Score: 12.2771] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 12.2192] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  6. [Score: 12.1746] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  7. [Score: 12.1746] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 12.1746] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  9. [Score: 10.9099] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 10.4733] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 15.8795] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 13.2394] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 13.2323] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  4. [Score: 13.2323] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  5. [Score: 13.2323] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  6. [Score: 13.1915] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  7. [Score: 13.1735] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  8. [Score: 13.1063] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  9. [Score: 11.7609] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 11.4757] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 15.9014] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 13.2880] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  3. [Score: 13.2825] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  4. [Score: 13.2254] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  5. [Score: 13.2254] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  6. [Score: 13.2254] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  7. [Score: 13.1688] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  8. [Score: 13.1303] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  9. [Score: 11.7427] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 11.4739] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 15.9454] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 13.5234] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  3. [Score: 13.3695] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  4. [Score: 13.2968] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  5. [Score: 13.2116] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  6. [Score: 13.2116] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 13.2116] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  8. [Score: 13.0102] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  9. [Score: 11.7065] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 11.4704] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 16.6696] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 13.8974] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  3. [Score: 13.8974] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  4. [Score: 13.8974] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  5. [Score: 13.8886] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  6. [Score: 13.7768] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 13.6660] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  8. [Score: 13.5747] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  9. [Score: 12.2692] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 12.1170] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 16.6938] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 13.9372] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 13.8897] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  4. [Score: 13.8897] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  5. [Score: 13.8897] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  6. [Score: 13.8468] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 13.7002] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  8. [Score: 13.5991] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  9. [Score: 12.2490] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 12.1150] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 16.7426] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 14.0357] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 13.9903] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 13.9587] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  5. [Score: 13.8741] OpenAI changes deal with US military after backlash (ID: f34ac757...)
+  6. [Score: 13.8741] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 13.8741] OpenAI changes deal with US military after backlash (ID: 7c614c80...)
+  8. [Score: 13.4679] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  9. [Score: 12.2089] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  10. [Score: 12.1109] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+
+PONDERACION POR CAMPO 
+
+==================================================
+Evaluando consulta: 'what are the risks of artificial intelligence in modern society'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 7.9798] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.2950] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 7.1595] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.5981] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.3047] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.0182] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.8931] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.1501] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.8949] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  10. [Score: 3.8037] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 8.0037] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.2149] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 7.0771] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.5767] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.3013] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.0899] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.8655] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.1722] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.8414] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  10. [Score: 3.7830] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 8.0519] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.0599] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 6.9193] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.5343] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.2945] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.2397] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.8114] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.2172] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.7424] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+  10. [Score: 3.7386] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 8.2708] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.2531] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 7.1241] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.7426] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.5539] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.0951] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.8636] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.2868] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.8911] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  10. [Score: 3.7816] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 8.2983] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.1687] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 7.0385] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.7189] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.5500] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.1744] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.8345] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.3117] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.8341] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  10. [Score: 3.7597] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 8.3538] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.0061] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 6.8749] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.6719] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.5421] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.3407] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.7773] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.3625] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.7250] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  10. [Score: 3.7168] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 8.4418] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.2312] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 7.1069] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.8280] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.7015] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.1388] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.8474] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.3690] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.8897] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  10. [Score: 3.7694] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 8.4715] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 7.1446] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 7.0197] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.8029] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.6973] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.2226] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.8174] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.3957] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.8308] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+  10. [Score: 3.7469] Reeves says her plan is working as growth forecast cut for this year (ID: 786e0ec4...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 8.5316] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 6.9778] UK troops and civilians in Middle East put at risk by Iran strikes, Healey says (ID: 2b620c17...)
+  3. [Score: 6.8531] TikTok won't protect DMs with controversial privacy tech, saying it would put users at risk (ID: d0a8443e...)
+  4. [Score: 6.7532] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  5. [Score: 6.6888] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+  6. [Score: 5.3985] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  7. [Score: 4.7585] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  8. [Score: 4.4500] Trump says US Navy will protect ships in Middle East 'if necessary' (ID: 5fb0f1c4...)
+  9. [Score: 3.7278] New fungal research to support woodland creation (ID: 8549afc8...)
+  10. [Score: 3.7181] Could a huge data centre revitalise Ayrshire - or ruin it? (ID: 106920c0...)
+
+==================================================
+Evaluando consulta: 'AI AI AI technology future'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 34.3663] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 28.0224] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 27.0000] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.3527] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 25.6362] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 23.2145] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 14.8282] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  8. [Score: 13.5853] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  9. [Score: 13.3311] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  10. [Score: 11.3187] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 34.2559] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 28.0811] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 27.0226] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.2080] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 25.5778] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 23.0764] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 14.8459] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  8. [Score: 13.6904] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  9. [Score: 13.3234] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  10. [Score: 11.3169] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 34.0408] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 28.1996] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 27.0713] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 25.9239] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 25.4620] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 22.8049] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 14.8816] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  8. [Score: 13.9059] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  9. [Score: 13.3080] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  10. [Score: 11.3133] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 36.0343] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.0977] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.0478] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 27.0152] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.3967] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 23.8703] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 14.8472] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  8. [Score: 14.4564] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  9. [Score: 14.3062] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  10. [Score: 12.3962] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 35.9129] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.1673] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.0809] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.8557] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.3322] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 23.7145] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 14.8663] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  8. [Score: 14.4470] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  9. [Score: 14.4301] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  10. [Score: 12.3939] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 35.6772] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.3079] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.1514] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.5429] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.2041] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 23.4091] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 14.9047] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  8. [Score: 14.6849] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  9. [Score: 14.4282] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  10. [Score: 12.3894] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 37.0786] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.7756] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.7218] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 27.4326] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.8767] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 24.2849] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 15.1750] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 14.8578] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  9. [Score: 14.7444] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  10. [Score: 13.0885] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 36.9511] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.8524] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.7623] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 27.2641] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.8084] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 24.1180] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 15.1644] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 14.8803] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  9. [Score: 14.8777] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  10. [Score: 13.0858] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 36.7040] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 30.0075] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.8483] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.9338] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.6728] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 23.7910] Why fake AI videos of UK urban decline are taking over social media (ID: 799ba4c7...)
+  7. [Score: 15.1603] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  8. [Score: 15.1432] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  9. [Score: 14.9175] Reform council deputy admits post image was AI (ID: 4181d0ed...)
+  10. [Score: 13.0806] India's top court angry after junior judge cites fake AI-generated orders (ID: 698140bf...)
+
+
+FILTRADO DE DOCUMENTOS CANDIDATOS
+
+==================================================
+Evaluando consulta: 'AI AI AI technology future'
+==================================================
+
+--- Parámetros: k1=1.5, b=0.75 ---
+  1. [Score: 34.3663] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 28.0224] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 27.0000] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.3527] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 25.6362] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 13.5853] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  7. [Score: 13.3311] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 9.9682] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.1742] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.5014] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=1.5, b=0.8 ---
+  1. [Score: 34.2559] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 28.0811] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 27.0226] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.2080] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 25.5778] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 13.6904] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  7. [Score: 13.3234] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 10.0088] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.1384] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.4592] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=1.5, b=0.9 ---
+  1. [Score: 34.0408] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 28.1996] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 27.0713] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 25.9239] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 25.4620] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 13.9059] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  7. [Score: 13.3080] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 10.0909] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.0677] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.3765] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=1.8, b=0.75 ---
+  1. [Score: 36.0343] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.0977] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.0478] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 27.0152] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.3967] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 14.4564] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 14.3062] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  8. [Score: 10.3492] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.4462] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.5119] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=1.8, b=0.8 ---
+  1. [Score: 35.9129] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.1673] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.0809] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.8557] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.3322] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 14.4470] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 14.4301] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  8. [Score: 10.3961] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.4056] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.4667] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=1.8, b=0.9 ---
+  1. [Score: 35.6772] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.3079] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.1514] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.5429] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.2041] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 14.6849] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  7. [Score: 14.4282] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 10.4912] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.3255] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.3783] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=2.0, b=0.75 ---
+  1. [Score: 37.0786] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.7756] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.7218] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 27.4326] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.8767] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 15.1750] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 14.7444] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  8. [Score: 10.5738] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.6049] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.5188] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=2.0, b=0.8 ---
+  1. [Score: 36.9511] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 29.8524] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.7623] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 27.2641] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.8084] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 15.1644] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  7. [Score: 14.8803] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  8. [Score: 10.6245] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.5615] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.4720] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+--- Parámetros: k1=2.0, b=0.9 ---
+  1. [Score: 36.7040] Urgent research needed to tackle AI threats, says Google AI boss (ID: 4213010d...)
+  2. [Score: 30.0075] Burger King rolls out AI headsets that track employee 'friendliness' (ID: ee4f6766...)
+  3. [Score: 28.8483] Jack Dorsey's Block cuts thousands of jobs as it embraces AI (ID: 7a3580ba...)
+  4. [Score: 26.9338] Trump orders government to stop using Anthropic in battle over AI use (ID: 229c4824...)
+  5. [Score: 26.6728] Anthropic boss rejects Pentagon demand to drop AI safeguards (ID: c0468dcf...)
+  6. [Score: 15.1603] Not even potholes will hold up self-driving cars, UK firm predicts (ID: 1ad11c45...)
+  7. [Score: 15.1432] OpenAI changes deal with US military after backlash (ID: 28cf3283...)
+  8. [Score: 10.7276] Amazon says drones damaged three facilities in UAE and Bahrain (ID: af618705...)
+  9. [Score: 9.4757] Deepfake attack: 'Many people could have been cheated' (ID: 50b2c419...)
+  10. [Score: 6.3804] India and Canada reset ties with 'landmark' nuclear energy deal (ID: 0dfd5b09...)
+
+  BOOST POR FRECUENCIA EN QUERY 
+
+  Ingrese su consulta: what are the risks of artificial intelligence in modern society
+
+Top 10 resultados:
+
+1. [8.0037] Urgent research needed to tackle AI threats, says Google AI boss
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c0q3g0ln274o?at_medium=RSS&at_campaign=rss
+
+2. [6.5767] Anthropic boss rejects Pentagon demand to drop AI safeguards
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cvg3vlzzkqeo?at_medium=RSS&at_campaign=rss
+
+3. [6.3013] India's top court angry after junior judge cites fake AI-generated orders
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c178zzw780xo?at_medium=RSS&at_campaign=rss
+
+4. [5.0899] Jack Dorsey's Block cuts thousands of jobs as it embraces AI
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cq570d12y9do?at_medium=RSS&at_campaign=rss
+
+5. [4.8655] Deepfake attack: 'Many people could have been cheated'
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c0j59vydxj9o?at_medium=RSS&at_campaign=rss
+
+6. [4.1722] Trump says US Navy will protect ships in Middle East 'if necessary'
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c20zg54g5vvo?at_medium=RSS&at_campaign=rss
+
+7. [3.8414] Could a huge data centre revitalise Ayrshire - or ruin it?
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/c2d1ny161yyo?at_medium=RSS&at_campaign=rss
+
+8. [3.7830] Reeves says her plan is working as growth forecast cut for this year
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/ce8wew99ngpo?at_medium=RSS&at_campaign=rss
+
+9. [3.6509] UK launches consultation asking for views on under-16s social media ban
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/cvg3vjkx9d7o?at_medium=RSS&at_campaign=rss
+
+10. [2.5268] How are flooding and storms affecting wildlife?
+   Fuente: BBC
+   URL: https://www.bbc.com/news/articles/czx1zq0xj00o?at_medium=RSS&at_campaign=rss
