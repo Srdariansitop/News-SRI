@@ -13,13 +13,10 @@ class VectorStore:
     """
 
     def __init__(self, dimension: int):
-
         self.dimension = dimension
-
-        self.index = faiss.IndexHNSWFlat(dimension, 32)
-
+        # CAMBIO AQUÍ: Añadimos faiss.METRIC_INNER_PRODUCT
+        self.index = faiss.IndexHNSWFlat(dimension, 32, faiss.METRIC_INNER_PRODUCT)
         self.index.hnsw.efSearch = 50
-
         self.metadata = []
 
     def add(self, vectors: np.ndarray, metadata_list: list[dict]):

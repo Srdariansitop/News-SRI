@@ -63,7 +63,9 @@ def run_embeddings():
 
     vectors = embedder.encode_batch(texts)
 
-    vector_store.add(vectors, ids)
+    # Convertir IDs a diccionarios de metadata (requerido por vector_store.add)
+    metadata_list = [{"id": doc_id} for doc_id in ids]
+    vector_store.add(vectors, metadata_list)
 
     vector_store.save("data/vector_db")
 

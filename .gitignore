@@ -78,3 +78,7 @@ modelos/
 # Ignorar carpeta de datos (archivos descargados y locales)
 data/
 vector_db/
+raw/
+index/
+
+#python -m app.main
