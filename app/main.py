@@ -149,7 +149,7 @@ def run_hybrid_search():
         print("Consulta vacía. Volviendo al menú.")
         return
 
-    results = hybrid_searcher.search(query, top_k=10)
+    results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.5)
 
     if not results:
         print("❌ No se encontraron resultados.")
@@ -157,7 +157,11 @@ def run_hybrid_search():
 
     print(f"\n🏆 Top {len(results)} Resultados Híbridos:\n")
     for i, result in enumerate(results, 1):
-        print(f"{i}. [{result['score']:.4f} RRF] {result['title']}")
+        # Determina si es LOCAL o WEB
+        is_web = result.get("from_web", False)
+        source_label = "🌐 [WEB]" if is_web else "📰 [LOCAL]"
+        
+        print(f"{i}. {source_label} [{result['score']:.4f} RRF] {result['title']}")
         print(f"   Fuente: {result['source']}")
         print(f"   URL: {result['url']}\n")
 

@@ -1,15 +1,25 @@
+from app.web import WebSearcher, SufficiencyChecker
+import math
+
+
 class HybridSearcher:
-    def __init__(self, bm25, vector_store, embedder, doc_metadata_map):
+    def __init__(self, bm25, vector_store, embedder, doc_metadata_map, enable_web_search: bool = True):
         self.bm25 = bm25
         self.vector_store = vector_store
         self.embedder = embedder
-        self.doc_metadata_map = doc_metadata_map  
+        self.doc_metadata_map = doc_metadata_map
+        self.enable_web_search = enable_web_search
+        
+        # Inicializa el buscador web y verificador de suficiencia
+        if enable_web_search:
+            self.web_searcher = WebSearcher()
+            self.sufficiency_checker = SufficiencyChecker(min_results=3, min_avg_score=0.3)  
 
     def search(self, query: str, top_k: int = 10, rrf_k: int = 60, semantic_threshold: float = 0.3) -> list:
         """
         Realiza búsqueda híbrida usando Reciprocal Rank Fusion (RRF).
         Filtra los resultados devolviendo SOLO aquellos que superan el semantic_threshold.
-        Umbral recomendado: 0.3 (balance entre relevancia y cobertura)
+        Umbral recomendado: 0.5 (balance entre relevancia y cobertura)
         """
         # 1. Obtener resultados de BM25
         bm25_results = self.bm25.search(query, top_k=top_k)
@@ -70,5 +80,37 @@ class HybridSearcher:
                 # Detenemos si ya llenamos el top_k de documentos VÁLIDOS
                 if len(final_results) == top_k:
                     break
+
+        # 6. BÚSQUEDA WEB: Si los resultados locales son insuficientes, busca en la web
+        if self.enable_web_search:
+            is_sufficient, reason = self.sufficiency_checker.is_sufficient(final_results)
+            
+            if not is_sufficient:
+                print(f"\n⚠️ Resultados insuficientes: {reason}")
+                print(f"🌐 Activando búsqueda web para: '{query}'")
+                
+                web_results = self.web_searcher.search(query, top_k=top_k - len(final_results))
+                
+                if web_results:
+                    print(f"✅ Se encontraron {len(web_results)} resultados en la web\n")
+                    
+                    for idx, web_result in enumerate(web_results, start=1):
+                        # Los resultados web tienen menor confianza que BBC
+                        # Usamos fórmula logarítmica para que decrezca suavemente pero NUNCA sea negativo
+                        web_score = max(0.0001, 1.0 / (2.0 + idx))  # Asegura positivo: 0.33, 0.25, 0.2, 0.16...
+                        final_results.append({
+                            "doc_id": f"web_{idx}",
+                            "score": web_score,
+                            "semantic_score": 0.0,
+                            "title": web_result.get("title", "Sin título"),
+                            "source": web_result.get("source", "web"),
+                            "url": web_result.get("url", "N/A"),
+                            "snippet": web_result.get("snippet", ""),
+                            "from_web": True
+                        })
+                else:
+                    print("❌ No se encontraron resultados en la web\n")
+            else:
+                print(f"✅ {reason}\n")
 
         return final_results
