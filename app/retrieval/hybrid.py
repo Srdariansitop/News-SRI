@@ -1,19 +1,29 @@
 from app.web import WebSearcher, SufficiencyChecker
+from app.maintenance.web_document_manager import WebDocumentManager
 import math
 
 
 class HybridSearcher:
-    def __init__(self, bm25, vector_store, embedder, doc_metadata_map, enable_web_search: bool = True):
+    def __init__(self, bm25, vector_store, embedder, doc_metadata_map, enable_web_search: bool = True, save_web_results: bool = True):
         self.bm25 = bm25
         self.vector_store = vector_store
         self.embedder = embedder
         self.doc_metadata_map = doc_metadata_map
         self.enable_web_search = enable_web_search
+        self.save_web_results = save_web_results
         
         # Inicializa el buscador web y verificador de suficiencia
         if enable_web_search:
             self.web_searcher = WebSearcher()
-            self.sufficiency_checker = SufficiencyChecker(min_results=3, min_avg_score=0.3)  
+            self.sufficiency_checker = SufficiencyChecker(min_results=3, min_avg_score=0.3)
+            
+            # Inicializa gestor de documentos web consolidado
+            if save_web_results:
+                self.web_manager = WebDocumentManager()
+            else:
+                self.web_manager = None
+        else:
+            self.web_manager = None  
 
     def search(self, query: str, top_k: int = 10, rrf_k: int = 60, semantic_threshold: float = 0.3) -> list:
         """
@@ -23,6 +33,7 @@ class HybridSearcher:
         """
         # 1. Obtener resultados de BM25
         bm25_results = self.bm25.search(query, top_k=top_k)
+        bm25_doc_ids = {result.doc_id for result in bm25_results}  # Guardamos IDs para validar luego
         
         # 2. Obtener resultados Semánticos
         query_vector = self.embedder.encode(query)
@@ -57,16 +68,20 @@ class HybridSearcher:
         # 4. Ordenar resultados finales por el score RRF de mayor a menor
         sorted_results = sorted(rrf_scores.items(), key=lambda item: item[1], reverse=True)
 
-        # 5. Formatear la salida Y APLICAR EL UMBRAL
+        # 5. Formatear la salida Y APLICAR EL UMBRAL (SOLO si vino de búsqueda semántica)
         final_results = []
         for doc_id, score in sorted_results:
             # Obtenemos el score semántico del documento (0.0 si solo lo encontró BM25)
             doc_semantic_score = semantic_scores.get(doc_id, 0.0)
+            bm25_found = doc_id in bm25_doc_ids  # ✓ Verificamos si BM25 lo encontró
             
-            # FILTRO CRÍTICO: Solo agregamos si cumple el umbral de similitud semántica
-            if doc_semantic_score >= semantic_threshold:
+            # LÓGICA MEJORADA: 
+            # - Si BM25 lo encontró, SIEMPRE incluirlo (confía en BM25)
+            # - Si SOLO vino de semántica, requiere el umbral
+            should_include = bm25_found or (doc_semantic_score >= semantic_threshold)
+            
+            if should_include:
                 doc_data = self.doc_metadata_map.get(doc_id, {})
-                print(f"✓ Documento aceptado - ID: {doc_id} | Score Semántico: {doc_semantic_score:.4f} >= Umbral: {semantic_threshold} | Título: {doc_data.get('title', 'Sin título')[:50]}")
                 
                 final_results.append({
                     "doc_id": doc_id,
@@ -94,6 +109,12 @@ class HybridSearcher:
                 if web_results:
                     print(f"✅ Se encontraron {len(web_results)} resultados en la web\n")
                     
+                    # 🔄 GUARDAR RESULTADOS WEB AUTOMÁTICAMENTE
+                    if self.save_web_results and self.web_manager:
+                        print("💾 Guardando resultados web en data/raw/...")
+                        saved_docs = self.web_manager.save_multiple_web_results(web_results, source="web", auto_index=False)
+                        # No printear aquí - el método ya printea un mensaje detallado
+                    
                     for idx, web_result in enumerate(web_results, start=1):
                         # Los resultados web tienen menor confianza que BBC
                         # Usamos fórmula logarítmica para que decrezca suavemente pero NUNCA sea negativo
@@ -114,3 +135,9 @@ class HybridSearcher:
                 print(f"✅ {reason}\n")
 
         return final_results
+    
+    def get_web_storage_stats(self) -> dict:
+        """Retorna estadísticas del almacenamiento web."""
+        if self.web_manager:
+            return self.web_manager.get_statistics()
+        return {"status": "Web storage not enabled"}
