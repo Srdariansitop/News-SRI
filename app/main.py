@@ -43,15 +43,20 @@ def load_raw_documents():
 
     return documents
 
-def run_embeddings():
-
-    print("\n🧠 Generando embeddings desde documentos RAW...\n")
+def generate_embeddings_internal(print_header=True):
+    """
+    Función interna para generar embeddings.
+    Reutilizable tanto desde el menú (opción 3) como automáticamente después de reindexar.
+    """
+    if print_header:
+        print("\n🧠 Generando embeddings desde documentos RAW...\n")
 
     documents = load_raw_documents()
 
     if not documents:
-        print("❌ No hay documentos en data/raw. Ejecuta primero el crawling.")
-        return
+        if print_header:
+            print("❌ No hay documentos en data/raw. Ejecuta primero el crawling.")
+        return False
 
     embedder = EmbeddingGenerator()
 
@@ -72,7 +77,8 @@ def run_embeddings():
 
         ids.append(doc_id)
 
-    print(f"📄 Generando embeddings para {len(texts)} documentos...")
+    if print_header:
+        print(f"📄 Generando embeddings para {len(texts)} documentos...")
 
     vectors = embedder.encode_batch(texts)
 
@@ -82,7 +88,15 @@ def run_embeddings():
 
     vector_store.save("data/vector_db")
 
-    print("\n✅ Embeddings generados y guardados.")
+    if print_header:
+        print("\n✅ Embeddings generados y guardados.")
+    
+    return True
+
+
+def run_embeddings():
+    """Opción 3 del menú: Generar embeddings manualmente."""
+    generate_embeddings_internal(print_header=True)
 
 
 
@@ -194,35 +208,44 @@ def run_hybrid_search():
             newly_indexed, stats = web_manager.reindex_web_documents(incremental_builder)
             
             print(f"\n✅ {newly_indexed} documentos indexados correctamente")
-            print("🔄 Recargando índices para mostrar nuevos resultados...\n")
             
-            # 🔑 RECARGAMOS LOS ÍNDICES DESDE DISCO
-            try:
-                builder.load()  # Recarga BM25 con los datos nuevos
-                bm25 = BM25(builder.index)
-                vector_store.load("data/vector_db")  # Recarga FAISS con los datos nuevos
+            # 🧠 GENERAR EMBEDDINGS AUTOMÁTICAMENTE PARA LOS NUEVOS DOCUMENTOS
+            print("🧠 Generando embeddings para los nuevos documentos...")
+            embeddings_ok = generate_embeddings_internal(print_header=False)
+            
+            if embeddings_ok:
+                print("✅ Embeddings generados exitosamente\n")
+                print("🔄 Recargando índices para mostrar nuevos resultados...\n")
                 
-                # ✅ Cargar documentos frescos y convertir a dict
-                documents_refreshed = load_raw_documents()
-                doc_map_refreshed = {doc["id"]: doc for doc in documents_refreshed}
-                
-                # Recreamos el hybrid_searcher con los índices frescos
-                hybrid_searcher = HybridSearcher(
-                    bm25=bm25, 
-                    vector_store=vector_store, 
-                    embedder=embedder, 
-                    doc_metadata_map=doc_map_refreshed,  # ✓ Pasar dict, no lista
-                    enable_web_search=True,
-                    save_web_results=True
-                )
-                
-                # 🔍 EJECUTAMOS LA BÚSQUEDA DE NUEVO CON LOS ÍNDICES NUEVOS
-                results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.7)
-                print(f"✅ Nueva búsqueda ejecutada con documentos indexados\n")
-                
-            except Exception as e:
-                print(f"⚠️ Advertencia al recargar índices: {e}")
-                print("💡 Los resultados mostrados son sin los nuevos documentos\n")
+                # 🔑 RECARGAMOS LOS ÍNDICES DESDE DISCO
+                try:
+                    builder.load()  # Recarga BM25 con los datos nuevos
+                    bm25 = BM25(builder.index)
+                    vector_store.load("data/vector_db")  # Recarga FAISS con los datos nuevos y embeddings
+                    
+                    # ✅ Cargar documentos frescos y convertir a dict
+                    documents_refreshed = load_raw_documents()
+                    doc_map_refreshed = {doc["id"]: doc for doc in documents_refreshed}
+                    
+                    # Recreamos el hybrid_searcher con los índices frescos
+                    hybrid_searcher = HybridSearcher(
+                        bm25=bm25, 
+                        vector_store=vector_store, 
+                        embedder=embedder, 
+                        doc_metadata_map=doc_map_refreshed,  # ✓ Pasar dict, no lista
+                        enable_web_search=True,
+                        save_web_results=True
+                    )
+                    
+                    # 🔍 EJECUTAMOS LA BÚSQUEDA DE NUEVO CON LOS ÍNDICES NUEVOS
+                    results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.7)
+                    print(f"✅ Nueva búsqueda ejecutada con documentos indexados y embeddings frescos\n")
+                    
+                except Exception as e:
+                    print(f"⚠️ Advertencia al recargar índices: {e}")
+                    print("💡 Los resultados mostrados son sin los nuevos documentos\n")
+            else:
+                print("⚠️ Error al generar embeddings")
                 
         except Exception as e:
             print(f"⚠️ Advertencia al reindexar: {e}")
