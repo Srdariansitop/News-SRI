@@ -89,19 +89,25 @@ class SufficiencyChecker:
     Determina si los resultados locales son suficientes o si es necesario buscar en la web.
     """
     
-    def __init__(self, min_results: int = 3, min_avg_score: float = 0.3):
+    def __init__(self, min_results: int = 3, min_avg_score: float = 0.3, min_semantic_score: float = 0.5):
         """
         Args:
             min_results: Mínimo número de resultados para considerar suficiente
             min_avg_score: Score promedio mínimo requerido
+            min_semantic_score: Score semántico MÍNIMO individual requerido (umbral de relevancia)
         """
         self.min_results = min_results
         self.min_avg_score = min_avg_score
+        self.min_semantic_score = min_semantic_score
     
     def is_sufficient(self, results: List[Dict]) -> Tuple[bool, str]:
         """
         Evalúa si los resultados locales son suficientes.
-        IMPORTANTE: Usa semantic_score (0.0-1.0), NO el score RRF que es demasiado pequeño.
+        
+        Lógica:
+        - Si NO hay resultados, necesita web
+        - Si TODOS tienen semantic_score=0.0, necesita web (sin embeddings)
+        - Si hay resultados con semantic_score > 0.0, son suficientes
         
         Args:
             results: Lista de resultados de búsqueda local
@@ -110,19 +116,27 @@ class SufficiencyChecker:
             Tupla (es_suficiente, razón)
         """
         
-        # Si no hay resultados, definitivamente necesitamos búsqueda web
+        # Si no hay resultados, necesitamos búsqueda web
         if not results:
             return False, "No hay resultados locales"
         
-        # Si hay menos del mínimo de resultados
-        if len(results) < self.min_results:
-            return False, f"Pocos resultados ({len(results)} < {self.min_results})"
+        # Contar resultados locales (no WEB)
+        local_results = [r for r in results if not r.get("from_web", False)]
         
-        # CORRECCIÓN: Calcula el promedio usando semantic_score (0.0-1.0)
-        # NO usamos 'score' que es RRF y tiene un máximo de ~0.016
-        avg_semantic_score = sum(r.get("semantic_score", 0) for r in results) / len(results)
+        # Si NO hay resultados locales en absoluto, necesita web
+        if not local_results:
+            return False, "No hay resultados locales"
         
-        if avg_semantic_score < self.min_avg_score:
-            return False, f"Score semántico promedio bajo ({avg_semantic_score:.3f} < {self.min_avg_score})"
+        # CLAVE: Si TODOS tienen semantic_score=0.0, NO hay embeddings generados
+        # No podemos confiar en BM25 solo para búsquedas muy específicas
+        max_semantic_score = max((r.get("semantic_score", 0.0) for r in local_results), default=0.0)
         
-        return True, "Resultados locales suficientes"
+        if max_semantic_score < self.min_semantic_score:
+            # Score semántico demasiado bajo - no es relevante semánticamente
+            return False, f"Score semántico muy bajo ({max_semantic_score:.3f} < {self.min_semantic_score}). Los resultados no son relevantes para esta búsqueda."
+        
+        # Si tenemos al menos semantic_score > 0, consideramos suficiente
+        if len(local_results) >= self.min_results:
+            return True, f"✅ {len(local_results)} resultados locales encontrados"
+        
+        return False, f"Solo {len(local_results)} resultados locales (mínimo: {self.min_results})"

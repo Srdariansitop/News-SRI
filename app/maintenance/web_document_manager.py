@@ -238,8 +238,14 @@ class WebDocumentManager:
         
         print(f"\n📂 Detectados {len(new_docs)} documentos nuevos")
         
+        # ✅ CARGAR índice existente ANTES de reindexar
+        incremental_builder.load()
+        
         # Usar incremental builder
         updated_index, updated_metadata, newly_indexed = incremental_builder.index_new_documents()
+        
+        # ✅ GUARDAR EL ÍNDICE ACTUALIZADO A DISCO
+        incremental_builder.save()
         
         # Actualizar tracking
         self.indexed_doc_ids.update(newly_indexed)

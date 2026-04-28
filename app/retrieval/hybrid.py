@@ -15,7 +15,7 @@ class HybridSearcher:
         # Inicializa el buscador web y verificador de suficiencia
         if enable_web_search:
             self.web_searcher = WebSearcher()
-            self.sufficiency_checker = SufficiencyChecker(min_results=3, min_avg_score=0.3)
+            self.sufficiency_checker = SufficiencyChecker(min_results=3, min_avg_score=0.3, min_semantic_score=0.5)
             
             # Inicializa gestor de documentos web consolidado
             if save_web_results:
@@ -68,14 +68,14 @@ class HybridSearcher:
         # 4. Ordenar resultados finales por el score RRF de mayor a menor
         sorted_results = sorted(rrf_scores.items(), key=lambda item: item[1], reverse=True)
 
-        # 5. Formatear la salida Y APLICAR EL UMBRAL (SOLO si vino de búsqueda semántica)
+        # 5. Formatear la salida Y APLICAR EL UMBRAL
         final_results = []
         for doc_id, score in sorted_results:
-            # Obtenemos el score semántico del documento (0.0 si solo lo encontró BM25)
+            # Obtenemos el score semántico del documento
             doc_semantic_score = semantic_scores.get(doc_id, 0.0)
-            bm25_found = doc_id in bm25_doc_ids  # ✓ Verificamos si BM25 lo encontró
+            bm25_found = doc_id in bm25_doc_ids
             
-            # LÓGICA MEJORADA: 
+            # LÓGICA: 
             # - Si BM25 lo encontró, SIEMPRE incluirlo (confía en BM25)
             # - Si SOLO vino de semántica, requiere el umbral
             should_include = bm25_found or (doc_semantic_score >= semantic_threshold)

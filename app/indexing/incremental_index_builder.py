@@ -186,3 +186,36 @@ class IncrementalIndexBuilder:
             "index_path": str(self.index_path),
             "tracked_doc_ids": len(self.indexed_doc_ids)
         }
+    
+    def save(self):
+        """Guarda el índice actualizado y metadatos a disco."""
+        self.index_path.mkdir(parents=True, exist_ok=True)
+        
+        # Guardar índice invertido
+        index_filepath = self.index_path / "inverted_index.json"
+        self.index.save(str(index_filepath))
+        
+        # Guardar metadatos
+        metadata_filepath = self.index_path / "documents_metadata.json"
+        try:
+            with open(metadata_filepath, "w", encoding="utf-8") as f:
+                json.dump(self.documents_metadata, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"❌ Error guardando metadatos: {e}")
+    
+    def load(self):
+        """Carga el índice existente y metadatos desde disco."""
+        index_filepath = self.index_path / "inverted_index.json"
+        if index_filepath.exists():
+            try:
+                self.index.load(str(index_filepath))
+            except Exception as e:
+                print(f"⚠️ Error al cargar índice invertido: {e}")
+        
+        metadata_filepath = self.index_path / "documents_metadata.json"
+        if metadata_filepath.exists():
+            try:
+                with open(metadata_filepath, "r", encoding="utf-8") as f:
+                    self.documents_metadata = json.load(f)
+            except Exception as e:
+                print(f"⚠️ Error al cargar metadatos: {e}")

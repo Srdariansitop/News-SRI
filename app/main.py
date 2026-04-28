@@ -34,9 +34,10 @@ def load_raw_documents():
                 data = json.load(f)
             
             # Verificar que el documento tiene estructura válida (tiene "id")
+            # y que es un diccionario (no una lista u otro tipo)
             if isinstance(data, dict) and "id" in data:
                 documents.append(data)
-        except (json.JSONDecodeError, KeyError):
+        except (json.JSONDecodeError, KeyError, TypeError):
             # Ignorar archivos corruptos o con estructura inválida
             continue
 
@@ -169,7 +170,7 @@ def run_hybrid_search():
         print("Consulta vacía. Volviendo al menú.")
         return
 
-    results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.5)
+    results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.7)
 
     if not results:
         print("❌ No se encontraron resultados.")
@@ -201,18 +202,22 @@ def run_hybrid_search():
                 bm25 = BM25(builder.index)
                 vector_store.load("data/vector_db")  # Recarga FAISS con los datos nuevos
                 
+                # ✅ Cargar documentos frescos y convertir a dict
+                documents_refreshed = load_raw_documents()
+                doc_map_refreshed = {doc["id"]: doc for doc in documents_refreshed}
+                
                 # Recreamos el hybrid_searcher con los índices frescos
                 hybrid_searcher = HybridSearcher(
                     bm25=bm25, 
                     vector_store=vector_store, 
                     embedder=embedder, 
-                    doc_metadata_map=load_raw_documents(),
+                    doc_metadata_map=doc_map_refreshed,  # ✓ Pasar dict, no lista
                     enable_web_search=True,
                     save_web_results=True
                 )
                 
                 # 🔍 EJECUTAMOS LA BÚSQUEDA DE NUEVO CON LOS ÍNDICES NUEVOS
-                results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.5)
+                results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.7)
                 print(f"✅ Nueva búsqueda ejecutada con documentos indexados\n")
                 
             except Exception as e:
