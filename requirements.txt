@@ -12,4 +12,3 @@ faiss-cpu
 python-multipart
 jinja2
 feedparser
-ddgs
