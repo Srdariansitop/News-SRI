@@ -37,27 +37,25 @@ class RAGSystem:
 
     def _call_llm(self, prompt: str) -> str:
         """
-        Invoca a la IA usando OpenRouter.
-        Asegúrate de tener la variable de entorno OPENROUTER_API_KEY configurada.
+        Invoca a la IA usando Groq.
+        Asegúrate de tener la variable de entorno GROQ_API_KEY configurada.
         """
-        api_key = os.getenv("OPENROUTER_API_KEY")
+        api_key = os.getenv("GROQ_API_KEY")
         if not api_key:
-            return "❌ Error: La variable de entorno OPENROUTER_API_KEY no está configurada."
+            return "❌ Error: La variable de entorno GROQ_API_KEY no está configurada."
 
         try:
             headers = {
                 "Authorization": f"Bearer {api_key}",
-                "HTTP-Referer": "http://localhost:8000",  # Cambia esto por la URL de tu proyecto
-                "X-Title": "News-SRI", # Cambia esto por el nombre de tu proyecto
                 "Content-Type": "application/json"
             }
             
             payload = {
-                "model": "meta-llama/llama-3-8b-instruct:free", # Usa el modelo gratuito que prefieras en OpenRouter
+                "model": "llama-3.3-70b-versatile", # Modelo más capaz y actualizado de Llama en Groq
                 "messages": [
                     {
                         "role": "system",
-                        "content": "Eres un asistente riguroso para leer documentos. Responde estrictamente la pregunta usando ÚNICAMENTE la información provista en los documentos, no inventes hechos."
+                        "content": "Eres un asistente de lectura de documentos. Responde a la pregunta del usuario usando exclusivamente el contexto proporcionado. Si la respuesta no está en el contexto, di 'No tengo información sobre eso'."
                     },
                     {
                         "role": "user",
@@ -66,14 +64,14 @@ class RAGSystem:
                 ]
             }
             
-            response = requests.post("https://openrouter.ai/api/v1/chat/completions", json=payload, headers=headers)
+            response = requests.post("https://api.groq.com/openai/v1/chat/completions", json=payload, headers=headers)
             response.raise_for_status()
             
             data = response.json()
             return data["choices"][0]["message"]["content"]
             
         except Exception as e:
-            return f"❌ Error conectando a OpenRouter: {str(e)}"
+            return f"❌ Error conectando a Groq: {str(e)}"
 
     def answer(self, query: str) -> Dict[str, Any]:
         """
