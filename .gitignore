@@ -81,4 +81,4 @@ vector_db/
 raw/
 index/
 
-#python -m app.main
+#python -m app.main.env

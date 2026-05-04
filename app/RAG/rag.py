@@ -2,6 +2,10 @@ import os
 import json
 import requests
 from typing import List, Dict, Any
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
 
 class RAGSystem:
     def __init__(self, hybrid_searcher, raw_data_path: str = "data/raw"):
