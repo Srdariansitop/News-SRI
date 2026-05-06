@@ -1,60 +1,114 @@
 import os
 import json
 from app.RAG.rag import RAGSystem
+from app.retrieval.hybrid import HybridSearcher
+from app.retrieval.bm25 import BM25
+from app.vector.embeddings import EmbeddingGenerator
+from app.vector.vector_store import VectorStore
+from app.indexing.index_builder import IndexBuilder
 
-# Mock (Simulador) del buscador para pruebas rápidas
-class MockHybridSearcher:
-    def search(self, query: str, top_k: int = 10) -> list:
-        print(f"   [Mock] Buscando '{query}' en el índice...")
-        return [
-            {"doc_id": "test_1", "score": 0.9, "title": "Noticia Espacial", "url": "http://fake-news.com/1"},
-            {"doc_id": "test_2", "score": 0.8, "title": "Agricultura Lunar", "url": "http://fake-news.com/2"},
-            {"doc_id": "test_3", "score": 0.7, "title": "Sin contenido", "url": "http://fake-news.com/3"}
-        ]
+def load_raw_documents():
+    """Carga documentos desde data/raw"""
+    RAW_DATA_PATH = "data/raw"
+    documents = []
+    
+    for filename in os.listdir(RAW_DATA_PATH):
+        if filename.startswith(".") or not filename.endswith(".json"):
+            continue
+            
+        path = os.path.join(RAW_DATA_PATH, filename)
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            
+            if isinstance(data, dict) and "id" in data:
+                documents.append(data)
+        except (json.JSONDecodeError, KeyError, TypeError):
+            continue
+    
+    return documents
 
 def main():
     print("="*50)
-    print("🚀 TEST DEL SISTEMA RAG CON OPENROUTER")
+    print("🚀 TEST DEL SISTEMA RAG CON GROQ")
     print("="*50)
     
-    # 1. Crear la carpeta data/raw por si acaso
-    os.makedirs("data/raw", exist_ok=True)
+    # 1. Cargar documentos reales
+    print("\n[*] Cargando documentos...")
+    documents = load_raw_documents()
+    doc_map = {doc["id"]: doc for doc in documents}
     
-    # 2. Generar documentos de prueba en data/raw (JSON falsos para que el RAG los lea)
-    doc1_path = "data/raw/test_1.json"
-    with open(doc1_path, "w", encoding="utf-8") as f:
-        json.dump({"content": "La capital de la Luna es la Base Lunar Alpha. La NASA confirmó que la estructura se mantiene con paneles solares gigantes instalados en los cráteres."}, f)
-        
-    doc2_path = "data/raw/test_2.json"
-    with open(doc2_path, "w", encoding="utf-8") as f:
-        json.dump({"content": "La principal exportación de la Luna a la Tierra en el año 2045 es el isótopo Helio-3, el cual ha revolucionado los reactores de fusión nuclear terrestres."}, f)
-        
-    # (El test_3 no lo creamos para comprobar que el código maneje documentos sin contenido)
-
-    # 3. Inicialización del RAG
-    print("[*] Conectando con IA distribuida...")
-    mock_searcher = MockHybridSearcher()
-    rag = RAGSystem(hybrid_searcher=mock_searcher, raw_data_path="data/raw")
-
-    # 4. Hacer la prueba de pregunta
-    pregunta = "¿Cuál es la capital de la Luna y qué exporta a la Tierra?"
-    print(f"\n👤 Usuario: {pregunta}")
+    if not doc_map:
+        print("❌ No hay documentos en data/raw. Ejecuta primero el crawling.")
+        return
     
+    print(f"✅ Se cargaron {len(doc_map)} documentos")
+    
+    # 2. Cargar BM25
+    print("[*] Cargando índice BM25...")
+    try:
+        builder = IndexBuilder()
+        builder.load()
+        bm25 = BM25(builder.index)
+        print("✅ Índice BM25 cargado")
+    except Exception as e:
+        print(f"❌ Error al cargar BM25: {e}")
+        return
+    
+    # 3. Cargar embedder y vector store
+    print("[*] Cargando embeddings...")
+    try:
+        embedder = EmbeddingGenerator()
+        vector_store = VectorStore(embedder.get_dimension())
+        vector_store.load("data/vector_db")
+        print("✅ Vector store cargado")
+    except Exception as e:
+        print(f"❌ Error al cargar vector store: {e}")
+        return
+    
+    # 4. Inicializar HybridSearcher REAL
+    print("[*] Inicializando buscador híbrido...")
+    hybrid_searcher = HybridSearcher(
+        bm25=bm25, 
+        vector_store=vector_store, 
+        embedder=embedder, 
+        doc_metadata_map=doc_map,
+        enable_web_search=False,  # Desactivar búsqueda web para pruebas
+        save_web_results=False
+    )
+    print("✅ Buscador híbrido listo\n")
+    
+    # 5. Inicialización del RAG
+    print("[*] Inicializando sistema RAG...")
+    rag = RAGSystem(hybrid_searcher=hybrid_searcher, raw_data_path="data/raw")    
+    # 6. Hacer la prueba de pregunta
+    pregunta = input("\n👤 Ingrese su pregunta: ")
+    if not pregunta.strip():
+        print("❌ Pregunta vacía.")
+        return
+        
+    print(f"\n[*] Procesando: '{pregunta}'")
+    print("[*] Buscando documentos relevantes...")
     print("[*] Generando respuesta con RAG (esto puede tardar unos segundos)...")
+    
     try:
         resultado = rag.answer(pregunta)
         
         print("\n" + "="*50)
         print("🤖 RESPUESTA DE LA IA:")
+        print("="*50)
         print(resultado["summary"])
         print("="*50)
         
         print("\n📚 Documentos consultados:")
         for doc in resultado["documents"]:
-            print(f" - [{doc['doc_id']}] {doc['title']} ({doc['url']})")
+            print(f" - [{doc['doc_id']}] {doc['title']} (Score: {doc['score']:.4f})")
+            print(f"   URL: {doc['url']}")
     
     except Exception as e:
-        print(f"\n❌ Algo falló en la prueba: {e}")
+        print(f"\n❌ Error en el RAG: {e}")
+        import traceback
+        traceback.print_exc()
 
 if __name__ == "__main__":
     main()

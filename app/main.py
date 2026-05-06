@@ -10,6 +10,7 @@ from app.maintenance.cleaner import DataCleaner
 from app.retrieval.hybrid import HybridSearcher
 from app.maintenance.web_document_manager import WebDocumentManager
 from app.indexing.incremental_index_builder import IncrementalIndexBuilder
+from app.RAG.rag import RAGSystem
 
 RAW_DATA_PATH = "data/raw"
 
@@ -433,6 +434,250 @@ def run_delete_embeddings():
     print("\n🗑️ Embeddings eliminados.\n")
 
 
+def run_rag():
+    """Opción para usar el sistema RAG con búsqueda híbrida real."""
+    print("\n" + "="*60)
+    print("🤖 SISTEMA RAG CON BÚSQUEDA HÍBRIDA")
+    print("="*60)
+    
+    # 1. Cargar documentos reales
+    print("\n[*] Cargando documentos...")
+    documents = load_raw_documents()
+    doc_map = {doc["id"]: doc for doc in documents}
+    
+    if not doc_map:
+        print("❌ No hay documentos en data/raw. Ejecuta primero el crawling.")
+        return
+    
+    print(f"✅ Se cargaron {len(doc_map)} documentos")
+    
+    # 2. Cargar BM25
+    print("[*] Cargando índice BM25...")
+    try:
+        builder = IndexBuilder()
+        builder.load()
+        bm25 = BM25(builder.index)
+        print("✅ Índice BM25 cargado")
+    except Exception as e:
+        print(f"❌ Error al cargar BM25: {e}")
+        return
+    
+    # 3. Cargar embedder y vector store
+    print("[*] Cargando embeddings...")
+    try:
+        embedder = EmbeddingGenerator()
+        vector_store = VectorStore(embedder.get_dimension())
+        vector_store.load("data/vector_db")
+        print("✅ Vector store cargado")
+    except Exception as e:
+        print(f"❌ Error al cargar vector store: {e}")
+        return
+    
+    # 4. Inicializar HybridSearcher REAL (sin búsqueda web)
+    print("[*] Inicializando buscador híbrido...")
+    hybrid_searcher = HybridSearcher(
+        bm25=bm25, 
+        vector_store=vector_store, 
+        embedder=embedder, 
+        doc_metadata_map=doc_map,
+        enable_web_search=False,  # Desactivar búsqueda web
+        save_web_results=False
+    )
+    print("✅ Buscador híbrido listo\n")
+    
+    # 5. Inicialización del RAG
+    print("[*] Inicializando sistema RAG...")
+    rag = RAGSystem(hybrid_searcher=hybrid_searcher, raw_data_path="data/raw")
+    
+    # 6. Hacer la pregunta
+    pregunta = input("\n👤 Ingrese su pregunta: ")
+    if not pregunta.strip():
+        print("❌ Pregunta vacía.")
+        return
+        
+    print(f"\n[*] Procesando: '{pregunta}'")
+    print("[*] Buscando documentos relevantes...")
+    print("[*] Generando respuesta con RAG (esto puede tardar unos segundos)...\n")
+    
+    try:
+        resultado = rag.answer(pregunta)
+        
+        print("\n" + "="*60)
+        print("🤖 RESPUESTA DE LA IA:")
+        print("="*60)
+        print(resultado["summary"])
+        print("="*60)
+        
+        print("\n📚 DOCUMENTOS CONSULTADOS:")
+        for i, doc in enumerate(resultado["documents"], 1):
+            print(f"\n{i}. [{doc['doc_id']}] {doc['title']}")
+            print(f"   Score: {doc['score']:.4f}")
+            print(f"   Semántico: {doc['semantic_score']:.4f}")
+            print(f"   Fuente: {doc['source']}")
+            print(f"   URL: {doc['url']}")
+    
+    except Exception as e:
+        print(f"\n❌ Error en el RAG: {e}")
+        import traceback
+        traceback.print_exc()
+
+
+def run_rag_hybrid_complete():
+    """Búsqueda Híbrida COMPLETA (con web) + RAG para sintetizar respuestas."""
+    print("\n" + "="*60)
+    print("🚀 RAG + BÚSQUEDA HÍBRIDA COMPLETA (BBC + WEB)")
+    print("="*60)
+    
+    # 1. Cargar documentos
+    print("\n[*] Cargando documentos...")
+    documents = load_raw_documents()
+    doc_map = {doc["id"]: doc for doc in documents}
+    initial_doc_count = len(doc_map)
+    
+    if not doc_map:
+        print("❌ No hay documentos en data/raw. Ejecuta primero el crawling.")
+        return
+    
+    print(f"✅ Se cargaron {len(doc_map)} documentos")
+    
+    # 2. Cargar BM25
+    print("[*] Cargando índice BM25...")
+    try:
+        builder = IndexBuilder()
+        builder.load()
+        bm25 = BM25(builder.index)
+        print("✅ Índice BM25 cargado")
+    except Exception as e:
+        print(f"❌ Error al cargar BM25: {e}")
+        return
+    
+    # 3. Cargar embedder y vector store
+    print("[*] Cargando embeddings...")
+    try:
+        embedder = EmbeddingGenerator()
+        vector_store = VectorStore(embedder.get_dimension())
+        vector_store.load("data/vector_db")
+        print("✅ Vector store cargado")
+    except Exception as e:
+        print(f"❌ Error al cargar vector store: {e}")
+        return
+    
+    # 4. Inicializar HybridSearcher CON búsqueda web activada
+    print("[*] Inicializando buscador híbrido con búsqueda web...")
+    hybrid_searcher = HybridSearcher(
+        bm25=bm25, 
+        vector_store=vector_store, 
+        embedder=embedder, 
+        doc_metadata_map=doc_map,
+        enable_web_search=True,  # ✅ Activar búsqueda web
+        save_web_results=True
+    )
+    print("✅ Buscador híbrido listo\n")
+    
+    # 5. Obtener consulta
+    query = input("\n👤 Ingrese su pregunta: ")
+    if not query.strip():
+        print("❌ Pregunta vacía.")
+        return
+    
+    print(f"\n[*] Procesando: '{query}'")
+    print("[*] Ejecutando búsqueda híbrida (documentos locales + web)...")
+    
+    # 6. Buscar
+    results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.7)
+    
+    if not results:
+        print("❌ No se encontraron resultados.")
+        return
+    
+    # 7. Verificar si hay documentos web nuevos y reindexar
+    documents_after = load_raw_documents()
+    new_doc_count = len(documents_after)
+    
+    if new_doc_count > initial_doc_count:
+        new_docs_count = new_doc_count - initial_doc_count
+        print(f"\n🔄 Se guardaron {new_docs_count} documentos web nuevos.")
+        print("🔁 Reindexando automáticamente...\n")
+        
+        try:
+            web_manager = WebDocumentManager()
+            incremental_builder = IncrementalIndexBuilder()
+            newly_indexed, stats = web_manager.reindex_web_documents(incremental_builder)
+            
+            print(f"✅ {newly_indexed} documentos indexados correctamente")
+            
+            # Generar embeddings para nuevos documentos
+            print("🧠 Generando embeddings para los nuevos documentos...")
+            embeddings_ok = generate_embeddings_internal(print_header=False)
+            
+            if embeddings_ok:
+                print("✅ Embeddings generados exitosamente\n")
+                
+                # Recargar índices
+                builder.load()
+                bm25 = BM25(builder.index)
+                vector_store.load("data/vector_db")
+                
+                documents_refreshed = load_raw_documents()
+                doc_map_refreshed = {doc["id"]: doc for doc in documents_refreshed}
+                
+                hybrid_searcher = HybridSearcher(
+                    bm25=bm25, 
+                    vector_store=vector_store, 
+                    embedder=embedder, 
+                    doc_metadata_map=doc_map_refreshed,
+                    enable_web_search=True,
+                    save_web_results=True
+                )
+                
+                results = hybrid_searcher.search(query, top_k=10, semantic_threshold=0.7)
+                print(f"✅ Nueva búsqueda ejecutada con documentos frescos\n")
+                
+        except Exception as e:
+            print(f"⚠️ Advertencia al reindexar: {e}\n")
+    
+    # 8. Mostrar resultados de la búsqueda
+    print(f"\n🏆 Se encontraron {len(results)} documentos relevantes")
+    print("="*60)
+    for i, result in enumerate(results[:5], 1):  # Mostrar los top 5
+        is_web = result.get("from_web", False)
+        source_label = "🌐 [WEB]" if is_web else "📰 [LOCAL]"
+        print(f"{i}. {source_label} {result['title']}")
+        print(f"   Score: {result['score']:.4f} | Fuente: {result['source']}")
+    print("="*60)
+    
+    # 9. Inicializar RAG y generar respuesta
+    print("\n[*] Inicializando sistema RAG...")
+    print("[*] Generando respuesta sintetizada con IA (puede tardar unos segundos)...\n")
+    
+    rag = RAGSystem(hybrid_searcher=hybrid_searcher, raw_data_path="data/raw")
+    
+    try:
+        resultado = rag.answer(query)
+        
+        print("\n" + "="*60)
+        print("🤖 RESPUESTA SINTETIZADA POR IA:")
+        print("="*60)
+        print(resultado["summary"])
+        print("="*60)
+        
+        print("\n📚 DOCUMENTOS CONSULTADOS PARA LA RESPUESTA:")
+        for i, doc in enumerate(resultado["documents"][:10], 1):
+            is_web = doc.get("from_web", False)
+            source_label = "🌐 WEB" if is_web else "📰 LOCAL"
+            print(f"\n{i}. [{source_label}] {doc['title']}")
+            print(f"   Score RRF: {doc['score']:.4f}")
+            if 'semantic_score' in doc:
+                print(f"   Score Semántico: {doc['semantic_score']:.4f}")
+            print(f"   Fuente: {doc['source']}")
+            print(f"   URL: {doc['url']}")
+    
+    except Exception as e:
+        print(f"\n❌ Error generando respuesta con RAG: {e}")
+        import traceback
+        traceback.print_exc()
+
+
 def main():
     while True:
         print("\n" + "="*60)
@@ -446,20 +691,22 @@ def main():
         print("  4 - Buscar (BM25)")
         print("  5 - Buscar (Semantic Search)")
         print("  6 - Buscar (Híbrida - BM25 + Semántica) 🔥")
-        print("  7 - Crawling + Indexing + Embeddings (todo)")
+        print("  7 - RAG (Retrieval-Augmented Generation) con IA 🤖")
+        print("  8 - RAG COMPLETO (Búsqueda Híbrida + Web + IA) ⚡")
+        print("  9 - Crawling + Indexing + Embeddings (todo)")
         
         print("\n🌐 GESTIÓN DE DOCUMENTOS WEB:")
-        print("  8 - Ver estadísticas de almacenamiento web")
-        print("  9 - Reindexar con documentos web nuevos")
+        print(" 10 - Ver estadísticas de almacenamiento web")
+        print(" 11 - Reindexar con documentos web nuevos")
         
         print("\n🧹 MANTENIMIENTO:")
-        print(" 10 - Limpiar duplicados")
-        print(" 11 - Borrar TODA la base de datos")
-        print(" 12 - Borrar SOLO documentos")
-        print(" 13 - Borrar SOLO embeddings")
+        print(" 12 - Limpiar duplicados")
+        print(" 13 - Borrar TODA la base de datos")
+        print(" 14 - Borrar SOLO documentos")
+        print(" 15 - Borrar SOLO embeddings")
         
         print("\n❌ SALIR:")
-        print(" 14 - Salir del programa")
+        print(" 16 - Salir del programa")
         print("="*60)
 
         opcion = input("\n👉 Elija una opción: ")
@@ -479,27 +726,31 @@ def main():
         elif opcion == "6":
             run_hybrid_search()
         elif opcion == "7":
+            run_rag()
+        elif opcion == "8":
+            run_rag_hybrid_complete()
+        elif opcion == "9":
             run_crawling()
             run_indexing()
             run_embeddings()
-        elif opcion == "8":
-            run_web_storage_stats()
-        elif opcion == "9":
-            run_reindex_web_documents()
         elif opcion == "10":
-            run_cleanup_duplicates()
+            run_web_storage_stats()
         elif opcion == "11":
-            run_delete_all_data()
+            run_reindex_web_documents()
         elif opcion == "12":
-            run_delete_documents()
+            run_cleanup_duplicates()
         elif opcion == "13":
-            run_delete_embeddings()
+            run_delete_all_data()
         elif opcion == "14":
+            run_delete_documents()
+        elif opcion == "15":
+            run_delete_embeddings()
+        elif opcion == "16":
             print("\n👋 Saliendo del programa. ¡Hasta luego!\n")
             sys.exit(0)
         else:
             print("\n❌ Opción no reconocida.")
-            print("Por favor, ingrese un número del 1 al 14.")
+            print("Por favor, ingrese un número del 1 al 16.")
             
 if __name__ == "__main__":
     main()

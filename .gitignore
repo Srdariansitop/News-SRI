@@ -81,6 +81,12 @@ vector_db/
 raw/
 index/
 
+# Ignorar metadatos y índices que cambian constantemente
+data/documents/documents_metadata.json
+data/index/inverted_index.json
+data/vector_db/faiss.index
+data/vector_db/metadata.pkl
+
 # Ocultar llaves
 .env
 .env.*
