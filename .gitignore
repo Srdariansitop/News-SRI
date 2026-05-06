@@ -81,4 +81,7 @@ vector_db/
 raw/
 index/
 
-#python -m app.main
+# Ocultar llaves
+.env
+.env.*
+
