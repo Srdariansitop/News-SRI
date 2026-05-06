@@ -48,6 +48,9 @@ coverage.xml
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Data folder (local only, not tracked)
+data/
+
 # pyenv
 .python-version
 
