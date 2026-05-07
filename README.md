@@ -104,7 +104,6 @@ NewsIR/
 │   ├── raw/                 # Documentos descargados
 │   ├── index/               # Índices invertidos
 │   └── vector_db/           # Base de datos vectorial
-├── tests/                   # Tests unitarios
 ├── requirements.txt         # Dependencias
 ├── .env                     # Variables de entorno (crea este archivo)
 ├── .gitignore               # Configuración de git
