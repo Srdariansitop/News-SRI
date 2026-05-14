@@ -15,6 +15,7 @@ class DataCleaner:
         self.vector_path = self.base_path / "vector_store"
         self.raw_path = self.base_path / "raw"
         self.index_path = self.base_path / "index"
+        self.ranking_path = self.base_path / "ranking"
 
     # -------------------------
     # 🔴 DELETE EMBEDDINGS
@@ -29,6 +30,25 @@ class DataCleaner:
         shutil.rmtree(self.vector_path)
 
         print(f"🗑️ Embeddings eliminados ({total_files} archivos borrados)")
+
+    # -------------------------
+    # 🔴 DELETE RANKING METRICS
+    # -------------------------
+    def delete_ranking_metrics(self):
+        """
+        Borra SOLO popularity_metrics.json (histórico de interacciones).
+        Mantiene config.json (es configuración estática).
+        """
+        metrics_file = self.ranking_path / "popularity_metrics.json"
+        
+        if metrics_file.exists():
+            try:
+                metrics_file.unlink()
+                print("🗑️ Histórico de popularidad eliminado")
+            except Exception as e:
+                print(f"❌ Error borrando popularity_metrics.json: {e}")
+        else:
+            print("⚠️ No existe histórico de popularidad")
 
     # -------------------------
     # 🔴 DELETE CRAWLER DATA

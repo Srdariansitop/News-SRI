@@ -52,6 +52,10 @@ class IndexBuilder:
             "url": doc.get("url", ""),
             "author": doc.get("author", ""),
             "date": doc.get("date", ""),
+            # NUEVOS CAMPOS PARA POSICIONAMIENTO
+            "domain_authority": doc.get("domain_authority", 0.40),
+            "content_type": doc.get("content_type", "news"),
+            "is_breaking": doc.get("is_breaking", False),
         }
 
     def index_document(self, doc: dict):

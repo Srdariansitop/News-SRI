@@ -400,6 +400,7 @@ def run_delete_all_data():
 
     cleaner.delete_crawler_data()
     cleaner.delete_embeddings()
+    cleaner.delete_ranking_metrics()
 
     print("\n🗑️ Base de datos completamente eliminada.\n")
 

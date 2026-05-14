@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple, Any
 from datetime import datetime, timezone
 from dataclasses import dataclass
+from urllib.parse import urlparse
 
 
 @dataclass
@@ -27,6 +28,9 @@ class NormalizedDocument:
     date: str
     content: str
     crawled_at: str
+    domain_authority: float = 0.40  # Web por defecto (menos confiable que BBC)
+    content_type: str = "news"      # breaking_news, news, analysis, opinion
+    is_breaking: bool = False       # True solo si es breaking news
 
 
 class WebDocumentManager:
@@ -52,6 +56,25 @@ class WebDocumentManager:
         "Entertainment": ["movie", "music", "actor", "celebrity", "film", "show", "series", "entertainment"],
     }
     
+    @staticmethod
+    def detect_content_type(title: str, content: str) -> str:
+        """
+        Detecta el tipo de contenido según palabras clave en título y contenido.
+        Returns: "breaking_news", "news", "analysis", "opinion"
+        """
+        title_lower = title.lower()
+        
+        # BREAKING NEWS
+        if any(word in title_lower for word in ["breaking", "just in", "live", "alert", "developing"]):
+            return "breaking_news"
+        
+        # ANALYSIS / OPINION
+        if any(word in title_lower for word in ["analysis", "opinion", "why", "how to", "explained", "what is", "guide", "explainer"]):
+            return "analysis"
+        
+        # Por defecto: NOTICIA
+        return "news"
+    
     def __init__(self, raw_data_path: str = "data/raw", index_path: str = "data/index"):
         """
         Inicializar el gestor de documentos web.
@@ -69,6 +92,9 @@ class WebDocumentManager:
         self.url_index_path = self.raw_data_path / ".web_url_index.json"
         self.indexed_docs_file = self.index_path / ".indexed_documents.json"
         self.reindex_marker = self.raw_data_path / ".reindex_needed"
+        
+        # Cargar configuración de ranking (domain authority mapping)
+        self.ranking_config = self._load_config()
         
         # Cargar índices existentes
         self.url_index: Dict[str, str] = self._load_json(self.url_index_path, {})
@@ -93,6 +119,11 @@ class WebDocumentManager:
         author = search_result.get("author", "Web Source").strip() or "Web Source"
         date_str = search_result.get("date", now) or now
         
+        # NUEVOS CAMPOS PARA POSICIONAMIENTO
+        content_type = self.detect_content_type(title, content)
+        is_breaking = content_type == "breaking_news"
+        domain_authority = self._get_domain_authority(url)  # Extrae de URL y busca en config
+        
         return NormalizedDocument(
             id=doc_id,
             source=source or "web",
@@ -102,7 +133,10 @@ class WebDocumentManager:
             author=author,
             date=date_str,
             content=content,
-            crawled_at=now
+            crawled_at=now,
+            domain_authority=domain_authority,      # Dinámico según dominio
+            content_type=content_type,  # Auto-detectado
+            is_breaking=is_breaking     # True solo si breaking news
         )
     
     def _detect_category(self, title: str, content: str = "") -> str:
@@ -309,8 +343,79 @@ class WebDocumentManager:
             "author": normalized_doc.author,
             "date": normalized_doc.date,
             "content": normalized_doc.content,
-            "crawled_at": normalized_doc.crawled_at
+            "crawled_at": normalized_doc.crawled_at,
+            # NUEVOS CAMPOS PARA POSICIONAMIENTO
+            "domain_authority": normalized_doc.domain_authority,
+            "content_type": normalized_doc.content_type,
+            "is_breaking": normalized_doc.is_breaking
         }
+    
+    # ==================== HELPER FUNCTIONS ====================
+    
+    def _load_config(self) -> Dict[str, Any]:
+        """
+        Carga la configuración de ranking desde data/ranking/config.json
+        Si no existe, retorna configuración por defecto.
+        """
+        config_path = Path("data/ranking/config.json")
+        
+        if config_path.exists():
+            try:
+                with open(config_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"⚠️ Error cargando config.json: {e}")
+                return self._get_default_config()
+        return self._get_default_config()
+    
+    def _get_default_config(self) -> Dict[str, Any]:
+        """Retorna configuración por defecto si no existe config.json"""
+        return {
+            "domain_authority_map": {
+                "BBC": 0.95,
+                "Reuters": 0.90,
+                "CNN": 0.85,
+                "AP": 0.80,
+                "web": 0.40
+            }
+        }
+    
+    def _get_domain_authority(self, url: str) -> float:
+        """
+        Extrae el dominio de la URL y busca su autoridad en config.json
+        Retorna autoridad específica del dominio o valor por defecto.
+        
+        Ejemplos:
+        - https://www.reuters.com/... → 0.90 (si está en mapping)
+        - https://blog-desconocido.com/... → 0.40 (default para web)
+        - https://cnn.com/... → 0.85 (si está en mapping)
+        """
+        try:
+            # Extraer dominio de la URL
+            parsed_url = urlparse(url)
+            domain = parsed_url.netloc.lower()
+            
+            # Eliminar "www." para normalizar
+            domain = domain.replace("www.", "")
+            
+            # Obtener mapping de config
+            domain_map = self.ranking_config.get("domain_authority_map", {})
+            
+            # Búsqueda 1: dominio exacto
+            if domain in domain_map:
+                return domain_map[domain]
+            
+            # Búsqueda 2: palabra clave en dominio (ej: "reuters" en "reuters.co.uk")
+            for key, score in domain_map.items():
+                if key != "web" and key in domain:
+                    return score
+            
+            # Por defecto para dominios desconocidos
+            return domain_map.get("web", 0.40)
+            
+        except Exception as e:
+            print(f"⚠️ Error extrayendo dominio de {url}: {e}")
+            return 0.40
     
     def _load_json(self, filepath: Path, default: Any) -> Any:
         """Carga JSON de forma segura."""
