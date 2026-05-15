@@ -1,5 +1,6 @@
 from app.web import WebSearcher, SufficiencyChecker
 from app.maintenance.web_document_manager import WebDocumentManager
+from app.positioning.ranker import CombinedRanker
 import math
 
 
@@ -133,6 +134,13 @@ class HybridSearcher:
                     print("❌ No se encontraron resultados en la web\n")
             else:
                 print(f"✅ {reason}\n")
+
+        # ========== MÓDULO DE POSICIONAMIENTO ==========
+        # Aplicar ranking FINAL considerando TODOS los documentos (local + web)
+        # Se ejecuta siempre, una sola vez, con la lista completa
+        ranker = CombinedRanker()
+        final_results = ranker.rank(final_results, self.doc_metadata_map)
+        # ===============================================
 
         return final_results
     
