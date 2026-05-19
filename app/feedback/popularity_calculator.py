@@ -142,9 +142,92 @@ class PopularityCalculator:
             "last_updated": None
         })
     
+    def add_click(self, doc_id: str):
+        """
+        Suma +1 a clicks del documento en popularity_metrics.json.
+        Se llama cuando usuario CLICKEA un resultado.
+        
+        Args:
+            doc_id: ID del documento
+        
+        EJEMPLO (desde API/Frontend):
+            pop_calc = PopularityCalculator()
+            pop_calc.add_click(doc_id="1413f986-6342...")
+            → popularity_metrics.json[doc_id].clicks += 1
+        """
+        self.metrics = self._load_metrics()
+        
+        if doc_id not in self.metrics:
+            self.metrics[doc_id] = {
+                "clicks": 0,
+                "search_frequency": 0,
+                "shares": 0,
+                "last_updated": None
+            }
+        
+        self.metrics[doc_id]["clicks"] += 1
+        self._save_metrics()
+        self._cache_max_values = None
+    
+    def add_share(self, doc_id: str):
+        """
+        Suma +1 a shares del documento en popularity_metrics.json.
+        Se llama cuando usuario COMPARTE un resultado.
+        
+        Args:
+            doc_id: ID del documento
+        
+        EJEMPLO (desde API/Frontend):
+            pop_calc = PopularityCalculator()
+            pop_calc.add_share(doc_id="1413f986-6342...")
+            → popularity_metrics.json[doc_id].shares += 1
+        """
+        self.metrics = self._load_metrics()
+        
+        if doc_id not in self.metrics:
+            self.metrics[doc_id] = {
+                "clicks": 0,
+                "search_frequency": 0,
+                "shares": 0,
+                "last_updated": None
+            }
+        
+        self.metrics[doc_id]["shares"] += 1
+        self._save_metrics()
+        self._cache_max_values = None
+    
+    def add_search(self, doc_id: str):
+        """
+        Suma +1 a search_frequency del documento en popularity_metrics.json.
+        Se llama cuando un documento APARECE en una búsqueda.
+        
+        Args:
+            doc_id: ID del documento
+        
+        EJEMPLO (desde API/Frontend):
+            pop_calc = PopularityCalculator()
+            pop_calc.add_search(doc_id="1413f986-6342...")
+            → popularity_metrics.json[doc_id].search_frequency += 1
+        """
+        self.metrics = self._load_metrics()
+        
+        if doc_id not in self.metrics:
+            self.metrics[doc_id] = {
+                "clicks": 0,
+                "search_frequency": 0,
+                "shares": 0,
+                "last_updated": None
+            }
+        
+        self.metrics[doc_id]["search_frequency"] += 1
+        self._save_metrics()
+        self._cache_max_values = None
+    
     def update_metrics(self, doc_id: str, clicks: int = 0, searches: int = 0, shares: int = 0):
         """
         Actualiza las métricas de un documento en popularity_metrics.json.
+        
+        DEPRECATED: Usar en su lugar add_click(), add_share(), add_search()
         
         Se llamaría desde el FRONTEND cuando el usuario interactúa con un resultado.
         
